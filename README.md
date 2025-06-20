@@ -1,4 +1,3 @@
-# JavaFSE-Deepskilling-
 # Cognizant Digital Nurture 4.0 JavaFSE - Deepskilling
 
 This repository contains my solutions and notes from the Cognizant Digital Nurture 4.0 Java Full Stack Engineer (FSE) Deepskilling round.

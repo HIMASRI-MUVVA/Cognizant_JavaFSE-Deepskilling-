@@ -1,0 +1,17 @@
+/* src/App.css */
+.App {
+  text-align: center; /* You can adjust this as needed */
+  font-family: Arial, sans-serif; /* A good default font */
+}
+
+/* Remove default header styling if it interferes */
+.App-header {
+  /* No specific styling needed if you're rendering h1 directly in App.js */
+}
+
+/* Ensure body has no extra margin/padding */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5; /* Light background for the overall page */
+}

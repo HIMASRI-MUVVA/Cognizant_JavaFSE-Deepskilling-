@@ -1,0 +1,158 @@
+/* src/App.css */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif; /* Using Inter font */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f2f5; /* Default light background */
+  color: #333; /* Default light text color */
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 8px; /* Rounded corners for the app container */
+}
+
+/* Light Theme Styles */
+.App.light {
+  background-color: #ffffff;
+  color: #333;
+}
+
+.App.light .App-header {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.App.light .employee-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+}
+
+.App.light .button-light {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+.App.light .button-light:hover {
+  background-color: #0056b3;
+}
+
+/* Dark Theme Styles */
+.App.dark {
+  background-color: #282c34;
+  color: #f0f0f0;
+}
+
+.App.dark .App-header {
+  background-color: #3a3f47;
+  color: #f0f0f0;
+}
+
+.App.dark .employee-card {
+  background-color: #3c4048;
+  border: 1px solid #555;
+}
+
+.App.dark .button-dark {
+  background-color: #61dafb;
+  color: #282c34;
+  border: none;
+}
+
+.App.dark .button-dark:hover {
+  background-color: #21a1f1;
+}
+
+/* Header Styles */
+.App-header {
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.App-header h1 {
+  margin-bottom: 20px;
+}
+
+/* Toggle Button Styling */
+.toggle-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 20px; /* More rounded */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Employee List and Card Styles */
+.employees-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.employee-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px; /* More rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: left;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.employee-card h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: inherit; /* Inherit color from parent theme */
+}
+
+.employee-card button {
+  padding: 10px 15px;
+  font-size: 15px;
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Make button full width */
+}
+
+.employee-card button:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .employees-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .employee-card {
+    width: 90%; /* Adjust width for smaller screens */
+  }
+}

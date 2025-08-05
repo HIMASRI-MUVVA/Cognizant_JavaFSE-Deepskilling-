@@ -1,0 +1,157 @@
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git checkout main
+Already on 'main'
+Your branch is up to date with 'origin/main'.
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git checkout -b GitWork
+Switched to a new branch 'GitWork'
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (GitWork)
+$ echo "<hello>Initial content from GitWork</hello>" > hello.xml
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (GitWork)
+$ git add hello.xml
+warning: in the working copy of 'hello.xml', LF will be replaced by CRLF the next time Git touches it
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (GitWork)
+$ git commit -m "Add hello.xml in GitWork branch"
+[GitWork 7f6380d] Add hello.xml in GitWork branch
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.xml
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (GitWork)
+$ echo "<hello>Updated content in GitWork</hello>" > hello.xml
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (GitWork)
+$ git status
+On branch GitWork
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello.xml
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (GitWork)
+$ git add hello.xml
+warning: in the working copy of 'hello.xml', LF will be replaced by CRLF the next time Git touches it
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (GitWork)
+$ git commit -m "Update hello.xml content in GitWork"
+[GitWork f72fa81] Update hello.xml content in GitWork
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (GitWork)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ echo "<hello>Content from main branch</hello>" > hello.xml
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git add hello.xml
+warning: in the working copy of 'hello.xml', LF will be replaced by CRLF the next time Git touches it
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git commit -m "Add hello.xml with content in main branch"
+[main 7f88d93] Add hello.xml with content in main branch
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.xml
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git log --oneline --graph --decorate --all
+* 7f88d93 (HEAD -> main) Add hello.xml with content in main branch
+| * f72fa81 (GitWork) Update hello.xml content in GitWork
+| * 7f6380d Add hello.xml in GitWork branch
+|/
+* a1e69ea (origin/main) Added branchfile.txt in GitNewBranch
+* 018d12b Add .gitignore to ignore log files and folder
+*   7bb3bf7 Merge branch 'main' of https://gitlab.com/himasri_muvva-group/gitdemo Merge remote-tracking branch 'origin/main'
+|\
+| * 4872621 Initial commit
+* e16b0fb Added welcome message file
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git diff main GitWork -- hello.xml
+diff --git a/hello.xml b/hello.xml
+index 9a20d9f..5d50bcf 100644
+--- a/hello.xml
++++ b/hello.xml
+@@ -1 +1 @@
+-<hello>Content from main branch</hello>
++<hello>Updated content in GitWork</hello>
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main|MERGING)
+$ code hello.xml
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main|MERGING)
+$ rm .hello.xml.swp .hello_LOCAL_2315.xml.swp .hello_REMOTE_2315.xml.swp hello_BACKUP_2315.xml hello_BASE_2315.xml hello_LOCAL_2315.xml hello_REMOTE_2315.xml
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main|MERGING)
+$ git add hello.xml
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main|MERGING)
+$ git commit -m "Manually resolved merge conflict in hello.xml"
+[main 9ba26fe] Manually resolved merge conflict in hello.xml
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 4 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 4 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ echo "*_BACKUP_*" >> .gitignore
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git add .gitignore
+warning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git commit -m "Add backup files to .gitignore"
+[main 7510a9e] Add backup files to .gitignore
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git branch
+  GitWork
+* main
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git branch -d GitWork
+Deleted branch GitWork (was f72fa81).
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git log --oneline --graph --decorate
+* 7510a9e (HEAD -> main) Add backup files to .gitignore
+*   9ba26fe Manually resolved merge conflict in hello.xml
+|\
+| * f72fa81 Update hello.xml content in GitWork
+| * 7f6380d Add hello.xml in GitWork branch
+* | 7f88d93 Add hello.xml with content in main branch
+|/
+* a1e69ea (origin/main) Added branchfile.txt in GitNewBranch
+* 018d12b Add .gitignore to ignore log files and folder
+*   7bb3bf7 Merge branch 'main' of https://gitlab.com/himasri_muvva-group/gitdemo Merge remote-tracking branch 'origin/main'
+|\
+| * 4872621 Initial commit
+* e16b0fb Added welcome message file

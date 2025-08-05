@@ -1,0 +1,93 @@
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git branch GitNewBranch
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git branch
+  GitNewBranch
+* main
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git checkout GitNewBranch
+Switched to branch 'GitNewBranch'
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (GitNewBranch)
+$ echo "This filr was created in GitNewBranch" > branchfile.txt
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (GitNewBranch)
+$ git add branchfile.txt
+warning: in the working copy of 'branchfile.txt', LF will be replaced by CRLF the next time Git touches it
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (GitNewBranch)
+$ git commit -m "Added branchfile.txt in GitNewBranch"
+[GitNewBranch a1e69ea] Added branchfile.txt in GitNewBranch
+ 1 file changed, 1 insertion(+)
+ create mode 100644 branchfile.txt
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (GitNewBranch)
+$ git status
+On branch GitNewBranch
+nothing to commit, working tree clean
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (GitNewBranch)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git diff GitNewBranch
+diff --git a/branchfile.txt b/branchfile.txt
+deleted file mode 100644
+index 9d401f6..0000000
+--- a/branchfile.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-This filr was created in GitNewBranch
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git merge GitNewBranch
+Updating 018d12b..a1e69ea
+Fast-forward
+ branchfile.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 branchfile.txt
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git log --online --graph --decorate
+fatal: unrecognized argument: --online
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git log --oneline --graph --decorate
+* a1e69ea (HEAD -> main, GitNewBranch) Added branchfile.txt in GitNewBranch
+* 018d12b (origin/main) Add .gitignore to ignore log files and folder
+*   7bb3bf7 Merge branch 'main' of https://gitlab.com/himasri_muvva-group/gitdemo Merge remote-tracking branch 'origin/main'
+|\
+| * 4872621 Initial commit
+* e16b0fb Added welcome message file
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git push origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 422 bytes | 422.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://gitlab.com/himasri_muvva-group/gitdemo.git
+   018d12b..a1e69ea  main -> main
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git branch -d GitNewBranch
+Deleted branch GitNewBranch (was a1e69ea).
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git push origin main
+Everything up-to-date
+

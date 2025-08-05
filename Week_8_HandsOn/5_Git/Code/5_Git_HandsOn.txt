@@ -1,0 +1,44 @@
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git checkout main
+Already on 'main'
+Your branch is ahead of 'origin/main' by 5 commits.
+  (use "git push" to publish your local commits)
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 5 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git branch
+* main
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git branch -a
+* main
+  remotes/origin/main
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git pull origin main
+From https://gitlab.com/himasri_muvva-group/gitdemo
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$ git push origin main
+Enumerating objects: 17, done.
+Counting objects: 100% (17/17), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (15/15), 1.52 KiB | 1.52 MiB/s, done.
+Total 15 (delta 5), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://gitlab.com/himasri_muvva-group/gitdemo.git
+   a1e69ea..7510a9e  main -> main
+
+Himasri Muvva@Himasri_Muvva MINGW64 ~/GitDemo (main)
+$
+
+
